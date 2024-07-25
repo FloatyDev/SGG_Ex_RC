@@ -8,7 +8,7 @@
 import numpy as np
 import sys
 from sympy.physics.paulialgebra import delta
-sys.path.append("/u/zkou2/Code/FactorizableNet/lib/fast_rcnn")
+sys.path.append("./lib/fast_rcnn")
 from config import cfg
 
 np.seterr(all='warn')

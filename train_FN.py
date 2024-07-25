@@ -67,8 +67,8 @@ parser.add_argument('--dropout', type=float, help='Set the dropout rate.')
 
 # Concept configure
 parser.add_argument('--CON_use',default='1')
-parser.add_argument('--CON_glove_word2vec_root', default = '/u/zkou2/Code/FactorizableNet/data/Glove/840B.300d.word2vec.txt' ,type=str)
-parser.add_argument('--CON_base_dir', default = '/u/zkou2/Code/FactorizableNet/data/VRD/concept_base.npy' ,type=str)
+parser.add_argument('--CON_glove_word2vec_root', default = './data/Glove/840B.300d.word2vec.txt' ,type=str)
+parser.add_argument('--CON_base_dir', default = './data/VRD/concept_base.npy' ,type=str)
 parser.add_argument('--CON_skip_bg', default = True ,type=bool)
 parser.add_argument('--CON_top_k', default = 5 ,type=int)
 parser.add_argument('--CON_T_m', default = 2 ,type=int)
