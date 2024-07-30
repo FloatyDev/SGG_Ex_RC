@@ -40,12 +40,12 @@ args = parser.parse_args()
 
 def main():
     global args
-    print "Loading training set and testing set..."
+    print ("Loading training set and testing set...")
     with open(args.path_data_opts, 'r') as f:
         data_opts = yaml.load(f)
     train_set = VRD(data_opts, 'train', batch_size=args.batch_size)
     test_set = VRD(data_opts, 'test', batch_size=args.batch_size)
-    print "Done."
+    print("Done.")
     with open(args.path_rpn_opts, 'r') as f:
         opts = yaml.load(f)
         opts['scale'] = train_set.opts['test']['SCALES'][0]
@@ -71,7 +71,7 @@ def main():
                 {'params': list(net.parameters())[26:]},
                 ], lr=args.lr, momentum=args.momentum, weight_decay=0.0005)
     else:
-        print 'Training from scratch.'
+        print('Training from scratch.')
         optimizer = torch.optim.SGD(list(net.parameters())[26:], lr=args.lr, momentum=args.momentum, weight_decay=0.0005)
 
     network.set_trainable(net.features, requires_grad=False)
@@ -184,7 +184,7 @@ def train(train_loader, target_net, optimizer, epoch):
 def test(test_loader, target_net):
     box_num = 0
     correct_cnt, total_cnt = 0., 0.
-    print '========== Testing ======='
+    print('========== Testing =======')
 
     results = []
 
